@@ -23,7 +23,7 @@ app.use('/.netlify/functions/api', router)
 
 ////////////////////////////////////////////
 ////////////////////////////////////////////
-app.get('/homestore', (req, res) => {
+router.get('/homestore', (req, res) => {
     if (!req.query.id) {
         return res.send({
             error: 'You must provide an id in the query! IE: localhost:3000/vinmonopolet?id=blabla. (in the future Marty)'
@@ -44,7 +44,7 @@ app.get('/homestore', (req, res) => {
     })
   
   })
-  app.get('/vinmonopolet', (req, res) => {
+  router.get('/vinmonopolet', (req, res) => {
     if (!req.query.city) {
         return res.send({
             error: 'You must provide a city in the query! IE: localhost:3000/vinmonopolet?city=blabla. (in the future Marty)'
