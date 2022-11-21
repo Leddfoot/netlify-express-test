@@ -1,8 +1,10 @@
 const express = require('express')
-
 const serverless = require('serverless-http')
-
 const app = express()
+
+////for verifying that node is operable on netlify
+const path = require('path')
+const port = process.env.PORT || 3000
 
 const router = express.Router()
 
@@ -65,6 +67,11 @@ router.get('/homestore', (req, res) => {
     })
   
   })
+
+
+  app.listen(port, function () {
+  console.log(`Server is up on port ${port}\n`);
+})
 ////////////////////////////////////////////
 ////////////////////////////////////////////
 
